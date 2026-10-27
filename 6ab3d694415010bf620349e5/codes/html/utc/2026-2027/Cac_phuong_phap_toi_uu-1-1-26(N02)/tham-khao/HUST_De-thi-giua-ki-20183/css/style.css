@@ -1,4 +1,36 @@
-/* CSS — nhúng vào html bằng: <link rel="stylesheet" href="style.css"> */
-body {
-  font-family: system-ui, sans-serif;
+:root{
+  --bg:#f3f4f6; --paper:#ffffff; --text:#111827; --muted:#6b7280;
+  --link:#1d4ed8; --link-bg:#eff6ff; --border:#d1d5db;
 }
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#111827; --paper:#1f2937; --text:#f3f4f6; --muted:#9ca3af;
+         --link:#93c5fd; --link-bg:#1e3a5f; --border:#4b5563; }
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text)}
+body{font-family:"Times New Roman",Times,serif;font-size:17px;line-height:1.55}
+.page{max-width:860px;margin:24px auto;padding:40px 48px;background:var(--paper);
+  border:1px solid var(--border);border-radius:6px}
+p{margin:.35em 0}
+p.empty{margin:.15em 0;line-height:1}
+.center{text-align:center}.right{text-align:right}.justify{text-align:justify}
+.tab{display:inline-block;width:2.5em}
+.li{display:flex;gap:.6em;margin:.3em 0}
+.li .lbl{flex:0 0 1.8em;text-align:right}
+.li-body{flex:1}
+hr.page-break{border:0;border-top:2px dashed var(--border);margin:2.2em 0}
+.table-wrap{overflow-x:auto;margin:.8em 0}
+table{border-collapse:collapse;width:100%;font-size:15px}
+td{border:1px solid var(--border);padding:6px 8px;vertical-align:top}
+td p{margin:.15em 0}
+a.img-link{display:inline-block;padding:0 6px;border-radius:4px;background:var(--link-bg);
+  color:var(--link);font:600 13px/1.6 system-ui,Arial,sans-serif;text-decoration:none;white-space:nowrap}
+a.img-link:hover{text-decoration:underline}
+.doc-footer{margin-top:2.5em;padding-top:1em;border-top:1px solid var(--border);font-size:15px}
+.gallery{margin-top:2.5em;padding-top:1em;border-top:2px solid var(--border);
+  font-family:system-ui,Arial,sans-serif;font-size:15px}
+.gallery h2{font-size:17px;margin:0 0 .5em}
+.gallery ul{columns:2;margin:0;padding-left:1.2em}
+.muted{color:var(--muted);font-size:13px}
+@media (max-width:640px){ .page{margin:0;padding:20px 16px;border:0;border-radius:0} .gallery ul{columns:1} }
+@media print{ body{background:#fff} .page{border:0;margin:0;max-width:none} .gallery{display:none} }
