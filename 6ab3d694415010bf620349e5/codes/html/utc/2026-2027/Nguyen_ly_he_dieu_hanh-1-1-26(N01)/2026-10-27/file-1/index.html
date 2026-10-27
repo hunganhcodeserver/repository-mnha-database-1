@@ -40,7 +40,7 @@ header{padding:16px 16px 0}h1{font-size:18px;margin:0 0 4px}.sub{color:var(--mut
 .print-btn:hover{border-color:var(--acc)}
 
 /* ---------- BẢNG ---------- */
-table{border-collapse:collapse;table-layout:fixed;width:896px;font:15px Calibri,"Times New Roman",serif}
+table{border-collapse:collapse;table-layout:fixed;width:1344px;font:15px Calibri,"Times New Roman",serif}
 td{height:20px;padding:2px 4px;text-align:right;color:#000;white-space:nowrap;overflow:hidden}
 td.ten{text-align:left}                       /* ô nhãn: FIFO, Frame 1... */
 tr.kh td, td.vien{border:1px solid #000}      /* dòng có viền / ô có viền */
@@ -49,6 +49,7 @@ tr.dau td{text-align:left}                    /* dòng dấu x */
 /* ---------- MÀU Ô ---------- */
 td.xanh{background:#b4c7e7}
 td.la{background:#e2efda}
+td.la2{background:#c6e0b4}
 td.vang{background:#fff2cc}
 td.do{background:#f8cbad}
 td.xam{background:#d9d9d9}
@@ -78,6 +79,13 @@ td.xam{background:#d9d9d9}
 <section class="panel on" data-i="0"><div class="meta">Sheet1</div><div class="scroll"><div class="paper">
 <table>
 <colgroup>
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
 <col style="width:64px">
 <col style="width:64px">
 <col style="width:64px">
@@ -129,6 +137,41 @@ td.xam{background:#d9d9d9}
 <tr class="dau"><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td>x</td><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td></td></tr>
 <!-- Dòng Tổng: chỉ 2 ô cuối có viền (class="vien") -->
 <tr class="tong"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="vien">Tổng:</td><td class="vien">9</td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<!-- ======== BÀI 11 ======== -->
+<tr class="dau"><td><b>Bài 11:</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<!-- ======== KHỐI FIFO (Bài 11) ======== -->
+<tr class="kh"><td class="ten">FIFO</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">5</td><td class="xanh">6</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">7</td><td class="xanh">6</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">5</td></tr>
+<tr class="kh"><td class="ten">Frame 1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="la2">5</td><td>5</td><td>5</td><td>5</td><td>5</td><td class="la2">3</td><td>3</td><td>3</td><td>3</td><td>3</td><td class="la2">1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr class="kh"><td class="ten">Frame 2</td><td></td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td class="la2">6</td><td>6</td><td>6</td><td>6</td><td>6</td><td class="la2">7</td><td>7</td><td>7</td><td>7</td><td>7</td><td class="la2">2</td><td>2</td><td>2</td></tr>
+<tr class="kh"><td class="ten">Frame 3</td><td></td><td></td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td class="la2">2</td><td>2</td><td>2</td><td>2</td><td>2</td><td class="la2">6</td><td>6</td><td>6</td><td>6</td><td>6</td><td class="la2">3</td><td>3</td></tr>
+<tr class="kh"><td class="ten">Frame 4</td><td></td><td></td><td></td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td class="la2">1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="la2">4</td><td>4</td><td>4</td><td>4</td><td class="la2">5</td></tr>
+<tr class="dau"><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td></tr>
+<tr class="tong"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="vien">Tổng:</td><td class="vien">16</td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<!-- ======== KHỐI OPT (Bài 11) ======== -->
+<tr class="kh"><td class="ten">OPT</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">5</td><td class="xanh">6</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">7</td><td class="xanh">6</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">5</td></tr>
+<tr class="kh"><td class="ten">Frame 1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="xam">1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="la2">2</td><td>2</td><td>2</td></tr>
+<tr class="kh"><td class="ten">Frame 2</td><td></td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td class="la2">7</td><td>7</td><td>7</td><td class="la2">4</td><td>4</td><td>4</td><td>4</td><td class="la2">5</td></tr>
+<tr class="kh"><td class="ten">Frame 3</td><td></td><td></td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+<tr class="kh"><td class="ten">Frame 4</td><td></td><td></td><td></td><td>4</td><td>4</td><td>4</td><td class="la2">5</td><td class="la2">6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+<tr class="dau"><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td></td><td>x</td><td>x</td><td></td><td></td><td></td><td></td><td>x</td><td></td><td></td><td>x</td><td></td><td>x</td><td></td><td>x</td></tr>
+<tr class="tong"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="vien">Tổng:</td><td class="vien">10</td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<tr class="ghichu"><td></td><td></td><td></td><td class="vien ten" colspan="16">(xa nhất) => thay (Lần 4, truy xuất 4 (vị trí 16): Trang 7 và trang 6 không bao giờ xuất hiện lại. Có thể thay trang 7 hoặc 6, hai cách đều đúng.)</td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<!-- ======== KHỐI LRU (Bài 11) ======== -->
+<tr class="kh"><td class="ten">LRU</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">5</td><td class="xanh">6</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">7</td><td class="xanh">6</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">5</td></tr>
+<tr class="kh"><td class="ten">Frame 1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="la2">6</td><td>6</td><td>6</td><td>6</td><td class="la2">2</td><td>2</td><td>2</td></tr>
+<tr class="kh"><td class="ten">Frame 2</td><td></td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td class="la2">4</td><td>4</td><td>4</td><td>4</td><td class="la2">5</td></tr>
+<tr class="kh"><td class="ten">Frame 3</td><td></td><td></td><td>3</td><td>3</td><td>3</td><td>3</td><td class="la2">5</td><td>5</td><td>5</td><td>5</td><td>5</td><td class="la2">3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+<tr class="kh"><td class="ten">Frame 4</td><td></td><td></td><td></td><td>4</td><td>4</td><td>4</td><td>4</td><td class="la2">6</td><td>6</td><td>6</td><td>6</td><td>6</td><td class="la2">7</td><td>7</td><td>7</td><td>7</td><td class="la2">1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr class="dau"><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td></td><td>x</td><td>x</td><td></td><td></td><td></td><td>x</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td>x</td><td></td><td>x</td></tr>
+<tr class="tong"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="vien">Tổng:</td><td class="vien">13</td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<tr class="ghichu"><td></td><td></td><td></td><td class="vien ten" colspan="16">(dùng lâu chưa cập nhật)</td></tr>
 </table>
 </div></div></section>
 
