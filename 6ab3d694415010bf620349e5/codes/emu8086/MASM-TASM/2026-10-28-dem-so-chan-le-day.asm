@@ -2,14 +2,21 @@
 .model small
 .stack 100h
 .data
-msg db 'Hello, MNHA!$'
+    ms1 db 'Nhap day so: $'
+    ms2 db 10, 13, 'Day so vua nhap: $'
+    ms3 db 10, 13, 'Tong so chan: $'
+    ms4 db 10, 13 'Tong so le: $'
 .code
 main proc
     mov ax, @data
     mov ds, ax
-    lea dx, msg
+    
+    lea dx, ms1
     mov ah, 9
     int 21h
+    
+    
+    
     mov ah, 4ch
     int 21h
 main endp
