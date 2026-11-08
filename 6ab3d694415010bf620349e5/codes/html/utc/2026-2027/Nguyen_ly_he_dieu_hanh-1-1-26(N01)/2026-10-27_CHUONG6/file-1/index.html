@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bảng 2026-10-27</title>
+<!--
+  ================= HƯỚNG DẪN SỬA TRỰC TIẾP TRONG FILE NÀY =================
+  • SỬA SỐ LIỆU : đổi chữ giữa <td> và </td>, ví dụ <td>7</td> -> <td>9</td>
+  • THÊM DÒNG   : copy nguyên 1 dòng <tr class="kh">...</tr> rồi dán xuống dưới, sửa số
+  • THÊM CỘT    : thêm 1 <col style="width:64px"> trong <colgroup> và thêm 1 <td></td>
+                  vào CUỐI MỖI DÒNG <tr> (và tăng colspan="14" ở dòng trống nếu cần)
+  • TÔ MÀU Ô    : <td class="xanh">  (xanh dương)   <td class="la">  (xanh lá)
+                  <td class="vang">  (vàng)         <td class="do">  (đỏ cam)
+                  <td class="xam">   (xám)          — bỏ class để bỏ màu
+                  muốn thêm màu mới: thêm 1 dòng trong khối CSS "MÀU Ô" bên dưới
+  • TÍCH Ô      : viết chữ x vào ô, ví dụ <td>x</td>
+  • THÊM SHEET  : copy cả khối <section class="panel"> ... </section> và thêm 1 nút
+                  <button class="tab" data-i="1"> trong <nav>, đổi data-i của section cho khớp
+  • VIỀN        : dòng class="kh" có viền mọi ô; ô có class "vien" cũng có viền
+  Phần IN ngang A4 ở cuối file giữ nguyên, không cần sửa.
+  ============================================================================
+-->
+<style>
+:root{--bg:#f4f4f2;--fg:#1f1f1d;--mut:#6b6b66;--card:#fff;--line:#d9d9d4;--acc:#1a5fb4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--fg:#ececea;--mut:#9a9a94;--line:#3a3a37;--acc:#7ab0ff}}
+:root[data-theme="dark"]{--bg:#161615;--fg:#ececea;--mut:#9a9a94;--line:#3a3a37;--acc:#7ab0ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:16px 16px 0}h1{font-size:18px;margin:0 0 4px}.sub{color:var(--mut);font-size:13px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:12px 16px 0;border-bottom:1px solid var(--line)}
+.tab{flex:none;border:1px solid var(--line);border-bottom:none;background:transparent;color:var(--mut);padding:8px 14px;border-radius:8px 8px 0 0;font:inherit;cursor:pointer;white-space:nowrap}
+.tab.on{background:var(--card);color:#1f1f1d;font-weight:600;border-color:var(--line)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab.on{color:#1f1f1d}}
+.panel{display:none;padding:12px 16px 24px}.panel.on{display:block}
+.meta{color:var(--mut);font-size:12px;margin-bottom:8px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+.paper{background:#fff;color:#000;padding:16px;width:max-content;min-width:100%}
+.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}
+.print-btn{border:1px solid var(--line);background:var(--card);color:#1f1f1d;padding:8px 14px;border-radius:8px;font:inherit;font-weight:600;cursor:pointer}
+.print-btn:hover{border-color:var(--acc)}
+
+/* ---------- BẢNG ---------- */
+table{border-collapse:collapse;table-layout:fixed;width:1344px;font:15px Calibri,"Times New Roman",serif}
+td{height:20px;padding:2px 4px;text-align:right;color:#000;white-space:nowrap;overflow:hidden}
+td.ten{text-align:left}                       /* ô nhãn: FIFO, Frame 1... */
+tr.kh td, td.vien{border:1px solid #000}      /* dòng có viền / ô có viền */
+tr.dau td{text-align:left}                    /* dòng dấu x */
+
+/* ---------- MÀU Ô ---------- */
+td.xanh{background:#b4c7e7}
+td.la{background:#e2efda}
+td.la2{background:#c6e0b4}
+td.vang{background:#fff2cc}
+td.do{background:#f8cbad}
+td.xam{background:#d9d9d9}
+
+/* ---------- IN (giữ nguyên) ---------- */
+@page{size:A4 landscape;margin:8mm}
+@media print{
+  html,body{background:#fff!important}
+  header,.tabs,.meta{display:none!important}
+  .panel{padding:0!important}
+  .scroll{overflow:visible!important;border:none!important;border-radius:0!important}
+  .paper{padding:0!important;width:auto!important;min-width:0!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  tr{break-inside:avoid}
+}
+</style></head><body>
+
+<header><h1>Bảng 2026-10-27</h1>
+<div class="sub">Chuyển từ file Excel · kéo ngang để xem hết bảng</div>
+<div class="bar"><button class="print-btn" id="printBtn" type="button">🖨️ In sheet đang xem (khổ ngang)</button><span class="sub">Chỉ in sheet đang mở, tự co vừa khổ A4 ngang.</span></div></header>
+
+<nav class="tabs" role="tablist">
+<button class="tab on" data-i="0" role="tab">Sheet1</button>
+</nav>
+
+<!-- ================= SHEET 1 ================= -->
+<section class="panel on" data-i="0"><div class="meta">Sheet1</div><div class="scroll"><div class="paper">
+<table>
+<colgroup>
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+<col style="width:64px">
+</colgroup>
+<!-- Dòng 1: số thứ tự trang (không viền) -->
+<tr class="so"><td></td><td>7</td><td>0</td><td>1</td><td>2</td><td>0</td><td>3</td><td>0</td><td>4</td><td>2</td><td>3</td><td>0</td><td>3</td><td>2</td></tr>
+
+<!-- ======== KHỐI FIFO ======== -->
+<tr class="kh"><td class="ten">FIFO</td><td class="xanh">7</td><td class="xanh">0</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">0</td><td class="xanh">3</td><td class="xanh">0</td><td class="xanh">4</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">0</td><td class="xanh">3</td><td class="xanh">2</td></tr>
+<tr class="kh"><td class="ten">Frame 1</td><td>7</td><td>7</td><td>7</td><td class="la">2</td><td>2</td><td>2</td><td>2</td><td class="la">4</td><td>4</td><td>4</td><td class="la">0</td><td>0</td><td>0</td></tr>
+<tr class="kh"><td class="ten">Frame 2</td><td></td><td>0</td><td>0</td><td>0</td><td>0</td><td class="la">3</td><td>3</td><td>3</td><td class="la">2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
+<tr class="kh"><td class="ten">Frame 3</td><td></td><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td class="la">0</td><td>0</td><td>0</td><td class="la">3</td><td>3</td><td>3</td><td>3</td></tr>
+<!-- Dòng dấu x: viết chữ x vào ô nào có lỗi trang -->
+<tr class="dau"><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td></td></tr>
+<!-- Dòng Tổng: chỉ 2 ô cuối có viền (class="vien") -->
+<tr class="tong"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="vien">Tổng:</td><td class="vien">10</td></tr>
+<tr class="trong"><td colspan="14"></td></tr>
+<tr class="trong"><td colspan="14"></td></tr>
+
+<!-- ======== KHỐI OPT ======== -->
+<tr class="kh"><td class="ten">OPT</td><td class="xanh">7</td><td class="xanh">0</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">0</td><td class="xanh">3</td><td class="xanh">0</td><td class="xanh">4</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">0</td><td class="xanh">3</td><td class="xanh">2</td></tr>
+<tr class="kh"><td class="ten">Frame 1</td><td>7</td><td>7</td><td>7</td><td class="la">2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
+<tr class="kh"><td class="ten">Frame 2</td><td></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="la">4</td><td>4</td><td>4</td><td class="la">0</td><td>0</td><td>0</td></tr>
+<tr class="kh"><td class="ten">Frame 3</td><td></td><td></td><td>1</td><td>1</td><td>1</td><td class="la">3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+<!-- Dòng dấu x: viết chữ x vào ô nào có lỗi trang -->
+<tr class="dau"><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td>x</td><td></td><td>x</td><td></td><td></td><td>x</td><td></td><td></td></tr>
+<!-- Dòng Tổng: chỉ 2 ô cuối có viền (class="vien") -->
+<tr class="tong"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="vien">Tổng:</td><td class="vien">7</td></tr>
+<tr class="trong"><td colspan="14"></td></tr>
+<tr class="trong"><td colspan="14"></td></tr>
+
+<!-- ======== KHỐI LRU ======== -->
+<tr class="kh"><td class="ten">LRU</td><td class="xanh">7</td><td class="xanh">0</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">0</td><td class="xanh">3</td><td class="xanh">0</td><td class="xanh">4</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">0</td><td class="xanh">3</td><td class="xanh">2</td></tr>
+<tr class="kh"><td class="ten">Frame 1</td><td>7</td><td>7</td><td>7</td><td class="la">2</td><td>2</td><td>2</td><td>2</td><td class="la">4</td><td>4</td><td>4</td><td class="la">0</td><td>0</td><td>0</td></tr>
+<tr class="kh"><td class="ten">Frame 2</td><td></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="la">3</td><td>3</td><td>3</td><td>3</td></tr>
+<tr class="kh"><td class="ten">Frame 3</td><td></td><td></td><td>1</td><td>1</td><td>1</td><td class="la">3</td><td>3</td><td>3</td><td class="la">2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
+<!-- Dòng dấu x: viết chữ x vào ô nào có lỗi trang -->
+<tr class="dau"><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td>x</td><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td></td></tr>
+<!-- Dòng Tổng: chỉ 2 ô cuối có viền (class="vien") -->
+<tr class="tong"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="vien">Tổng:</td><td class="vien">9</td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<!-- ======== BÀI 11 ======== -->
+<tr class="dau"><td><b>Bài 11:</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<!-- ======== KHỐI FIFO (Bài 11) ======== -->
+<tr class="kh"><td class="ten">FIFO</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">5</td><td class="xanh">6</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">7</td><td class="xanh">6</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">5</td></tr>
+<tr class="kh"><td class="ten">Frame 1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="la2">5</td><td>5</td><td>5</td><td>5</td><td>5</td><td class="la2">3</td><td>3</td><td>3</td><td>3</td><td>3</td><td class="la2">1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr class="kh"><td class="ten">Frame 2</td><td></td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td class="la2">6</td><td>6</td><td>6</td><td>6</td><td>6</td><td class="la2">7</td><td>7</td><td>7</td><td>7</td><td>7</td><td class="la2">2</td><td>2</td><td>2</td></tr>
+<tr class="kh"><td class="ten">Frame 3</td><td></td><td></td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td class="la2">2</td><td>2</td><td>2</td><td>2</td><td>2</td><td class="la2">6</td><td>6</td><td>6</td><td>6</td><td>6</td><td class="la2">3</td><td>3</td></tr>
+<tr class="kh"><td class="ten">Frame 4</td><td></td><td></td><td></td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td class="la2">1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="la2">4</td><td>4</td><td>4</td><td>4</td><td class="la2">5</td></tr>
+<tr class="dau"><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td></tr>
+<tr class="tong"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="vien">Tổng:</td><td class="vien">16</td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<!-- ======== KHỐI OPT (Bài 11) ======== -->
+<tr class="kh"><td class="ten">OPT</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">5</td><td class="xanh">6</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">7</td><td class="xanh">6</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">5</td></tr>
+<tr class="kh"><td class="ten">Frame 1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="xam">1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="la2">2</td><td>2</td><td>2</td></tr>
+<tr class="kh"><td class="ten">Frame 2</td><td></td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td class="la2">7</td><td>7</td><td>7</td><td class="la2">4</td><td>4</td><td>4</td><td>4</td><td class="la2">5</td></tr>
+<tr class="kh"><td class="ten">Frame 3</td><td></td><td></td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+<tr class="kh"><td class="ten">Frame 4</td><td></td><td></td><td></td><td>4</td><td>4</td><td>4</td><td class="la2">5</td><td class="la2">6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+<tr class="dau"><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td></td><td>x</td><td>x</td><td></td><td></td><td></td><td></td><td>x</td><td></td><td></td><td>x</td><td></td><td>x</td><td></td><td>x</td></tr>
+<tr class="tong"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="vien">Tổng:</td><td class="vien">10</td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<tr class="ghichu"><td></td><td></td><td></td><td class="vien ten" colspan="16">(xa nhất) => thay (Lần 4, truy xuất 4 (vị trí 16): Trang 7 và trang 6 không bao giờ xuất hiện lại. Có thể thay trang 7 hoặc 6, hai cách đều đúng.)</td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<!-- ======== KHỐI LRU (Bài 11) ======== -->
+<tr class="kh"><td class="ten">LRU</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">5</td><td class="xanh">6</td><td class="xanh">2</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">7</td><td class="xanh">6</td><td class="xanh">3</td><td class="xanh">4</td><td class="xanh">1</td><td class="xanh">2</td><td class="xanh">3</td><td class="xanh">5</td></tr>
+<tr class="kh"><td class="ten">Frame 1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="la2">6</td><td>6</td><td>6</td><td>6</td><td class="la2">2</td><td>2</td><td>2</td></tr>
+<tr class="kh"><td class="ten">Frame 2</td><td></td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td class="la2">4</td><td>4</td><td>4</td><td>4</td><td class="la2">5</td></tr>
+<tr class="kh"><td class="ten">Frame 3</td><td></td><td></td><td>3</td><td>3</td><td>3</td><td>3</td><td class="la2">5</td><td>5</td><td>5</td><td>5</td><td>5</td><td class="la2">3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+<tr class="kh"><td class="ten">Frame 4</td><td></td><td></td><td></td><td>4</td><td>4</td><td>4</td><td>4</td><td class="la2">6</td><td>6</td><td>6</td><td>6</td><td>6</td><td class="la2">7</td><td>7</td><td>7</td><td>7</td><td class="la2">1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr class="dau"><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td><td></td><td>x</td><td>x</td><td></td><td></td><td></td><td>x</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td>x</td><td></td><td>x</td></tr>
+<tr class="tong"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="vien">Tổng:</td><td class="vien">13</td></tr>
+<tr class="trong"><td colspan="21"></td></tr>
+<tr class="ghichu"><td></td><td></td><td></td><td class="vien ten" colspan="16">(dùng lâu chưa cập nhật) => thay</td></tr>
+</table>
+</div></div></section>
+
+
+
+<!-- Bài 11 -->
+<!-- 1, 2, 3, 4, 2, 1, 5, 6, 2, 1, 2, 3, 7, 6, 3, 4, 1, 2, 3, 5 -->
+
+
+
+<script>
+/* ---- Chuyển tab + In (giữ nguyên, không cần sửa) ---- */
+(function(){var t=document.querySelectorAll('.tab'),p=document.querySelectorAll('.panel');
+function go(i){t.forEach(function(x){x.classList.toggle('on',x.dataset.i==i)});p.forEach(function(x){x.classList.toggle('on',x.dataset.i==i)});}
+t.forEach(function(x){x.addEventListener('click',function(){go(x.dataset.i)})});
+var paper=null;
+function fit(){var pn=document.querySelector('.panel.on');if(!pn)return;paper=pn.querySelector('.paper');var tb=paper.querySelector('table');if(!tb)return;var w=tb.offsetWidth||1;paper.style.zoom=Math.min(1,1040/w);}
+function unfit(){if(paper){paper.style.zoom='';paper=null;}}
+window.addEventListener('beforeprint',fit);window.addEventListener('afterprint',unfit);
+document.getElementById('printBtn').addEventListener('click',function(){fit();setTimeout(function(){try{window.print();}catch(e){}},50);});})();
+</script>
+</body></html>
